@@ -1,6 +1,7 @@
 import unittest
 from vowel_numbers import count_vowels
 from word_numbers import count_words
+from character_numbers import count_characters
 
 class TestVowelNumbers(unittest.TestCase):
     def test_all_vowels(self):
@@ -34,5 +35,30 @@ class TestWordNumbers(unittest.TestCase):
     def test_insert_punctuation(self):
         self.assertEqual(count_words("Hello, world! "), 2)
 
+class TestCharacterNumbers(unittest.TestCase):
+    def test_letters_only(self):
+        self.assertEqual(count_characters("sometext"), 8)
+
+    def test_with_spaces(self):
+        self.assertEqual(count_characters("some text"), 9)
+
+    def test_with_punctuation(self):
+        self.assertEqual(count_characters("Hello, world!"), 13)
+
+    def test_with_special_characters(self):
+        self.assertEqual(count_characters("#$@%^&*()!"), 10)
+
+    def test_numbers(self):
+        self.assertEqual(count_characters("534211"), 6)
+
+    def test_empty_input(self):
+        self.assertEqual(count_characters(""), 0)
+    
+    def test_single_letter(self):
+        self.assertEqual(count_characters("a"), 1)
+
+    def test_spaces_input(self):
+        self.assertEqual(count_characters("    "), 4)
+        
 if __name__ == "__main__":
     unittest.main()
