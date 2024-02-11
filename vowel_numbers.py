@@ -1,12 +1,15 @@
 # Count the number of vowels in a user's input
 
-vowels = ['a', 'e', 'i', 'o', 'u']
-counter = 0
+def count_vowels(user_input):
+    vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+    counter = 0
 
-user_input = input("Please provide a string: ")
+    for char in user_input:
+        if char in vowels:
+            counter += 1
 
-for char in user_input:
-    if char in vowels:
-        counter += 1
+    return counter
 
-print(counter)
+if __name__ == '__main__':
+    user_input = input("Please provide a string: ")
+    print(count_vowels(user_input))
