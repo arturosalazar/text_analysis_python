@@ -19,6 +19,20 @@ word_list = set(words.words())
 def is_valid_word_nltk(word):
     return word.lower() in word_list
 
+def check_word_list(user_input):
+    if not user_input:
+        return "Empty String"
+    input_words_list = format_word_list(user_input)
+    error_words = []
+    for word in input_words_list:
+        if not is_valid_word_nltk(word):
+            error_words.append(word)
+
+    if error_words:
+        return error_words
+    else:
+        return "No Errors"
+
 """Format words into a list of just strings without punctuation"""
 def format_word_list(input_string):
 
@@ -37,4 +51,4 @@ def format_word_list(input_string):
 
 if __name__ == "__main__":
     user_input = input("Please provide a string: ")
-    print(format_word_list(user_input))
+    print(check_word_list(user_input))
