@@ -25,6 +25,15 @@ The goal of this project is to explore different ways to analyze text with Pytho
 2. Count the total number of characters in user input, including spaces and punctuation
 3. Return the total number of characters
 
+### Spell Checker - identify misspelled words in an input using nltk
+
+1. Import nltk words corpus
+1. Take in input from the user.
+1. Create list of words from user, excluding spaces, numbers, and punctuation
+1. Compare each word to the NLTK words corpus.
+1. If a word is not found in the corpus, add it to a list of errors.
+1. Print the list of errors to show the user which words are misspelled.
+
 ## Testing
 
 Create Unit Tests for each file
@@ -55,3 +64,43 @@ Create Unit Tests for each file
 6. Empty input: Test that program returns 0 when getting an empty string.
 7. Single letter input: Check that program returns 1 when there is one single character
 8. Input of just spaces: Check that program counts all spaces when just using spaces
+
+### Spell Checker Test Cases:
+
+1. Single correctly spelled word: Vertify "No Errors" given with one single correctly spelled word
+2. Multiple correctly spelled words: Vertify "No Errors" given with multiple single correctly spelled word
+3. Incorrectly spelled word: Vertify list with error given with one single incorrectly spelled word
+4. Correctly and incorrectly spelled words combined: Confirm that with mixed correct and incorrect words, list of errors given
+5. Words spelled correctly and incorrectly with special characters: Confirm that with mixed correct and incorrect words, list of errors given ignoring special characters
+6. Empty string: Verify that "Empty String" returned when no string is passed
+7. Numbers: Confirm that with mixed correct and incorrect words, list of errors given ignoring numbers
+
+## How to Run
+
+### To run Vowel Numbers:
+
+1. Open your terminal or command prompt.
+2. Navigate to the directory containing the vowel_numbers.py script.
+3. Run the script using Python: python vowel_numbers.py.
+4. Follow the on-screen prompts to input text.
+
+### To run Word Numbers:
+
+1. Follow the similar steps as for Vowel Numbers, using word_numbers.py.
+
+### To run Character Numbers:
+
+1. Follow the similar steps as above, using character_numbers.py.
+
+### To run Spell Checker:
+
+1. Ensure that you have nltk installed in your system. If not, you can install it using the requirements.txt file
+2. In the terminal, run: pip install -r requirements.txt.
+3. Run the spell checker script using: python spell_checker.py.
+4. Input your text as prompted, and the script will output any misspelled words.
+
+### To run all unit tests:
+
+1. Open your terminal or command prompt.
+2. Navigate to the directory containing the test_text_analysis.py script.
+3. Run the script using Python: python test_text_analysis.py.
